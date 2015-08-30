@@ -16,15 +16,6 @@ class MovieDetailsViewController: UIViewController {
     
     var movie: NSDictionary!
     
-    func test() {
-        var url = "http://resizing.flixster.com/q7N6i-lodgiFIv2pn2fKcITzDFw=/o/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/07/11190713_ori.jpg"
-        
-        var range = url.rangeOfString(".*cloudfront.net/", options: .RegularExpressionSearch)
-        if let range = range {
-            url = url.stringByReplacingCharactersInRange(range, withString: "https://content6.flixster.com/")
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +23,7 @@ class MovieDetailsViewController: UIViewController {
         synopsisLabel.text = movie["synopsis"] as? String
         
         // Alter the URL to get the full size image
-        // Original URL looks like this: "http://resizing.flixster.com/q7N6i-lodgiFIv2pn2fKcITzDFw=/o/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/07/11190713_ori.jpg"        
+        // Original URL looks like this: "http://resizing.flixster.com/q7N6i-lodgiFIv2pn2fKcITzDFw=/o/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/07/11190713_ori.jpg"
         var urlString = movie.valueForKeyPath("posters.thumbnail") as! String
         var range = urlString.rangeOfString(".*cloudfront.net/", options: .RegularExpressionSearch)
         if let range = range {
