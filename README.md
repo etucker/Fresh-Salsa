@@ -25,7 +25,7 @@ Time spent: `5.5`
 - [ ] Add a search bar: pretty simple implementation of searching against the existing table view data.
 
 ### Walkthrough
-![Video Walkthrough](http://i.imgur.com/9d4fXIm.gif)
+![Video Walkthrough](https://raw.githubusercontent.com/etucker/Fresh-Salsa/master/fresh-salsa-walkthrough.gif)
 
 Credits
 ---------
