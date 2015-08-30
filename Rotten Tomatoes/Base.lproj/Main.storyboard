@@ -53,11 +53,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view hidden="YES" alpha="0.74999999999999978" contentMode="scaleToFill" id="otj-eh-GrY">
+                                <rect key="frame" x="0.0" y="-146" width="320" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Network error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4lX-fd-VaI">
+                                        <rect key="frame" x="8" y="219" width="304" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.81161221590909094" green="0.81161221590909094" blue="0.81161221590909094" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Fresh Salsa" id="Rn8-CG-Mon"/>
                     <connections>
+                        <outlet property="networkErrorView" destination="otj-eh-GrY" id="Adt-RG-4Kz"/>
                         <outlet property="tableView" destination="1Is-0J-qNx" id="49n-zo-IGW"/>
                     </connections>
                 </viewController>
