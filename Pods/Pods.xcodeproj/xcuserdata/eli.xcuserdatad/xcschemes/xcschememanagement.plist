@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>KVNProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Rotten Tomatoes.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3E5DC10EAC910E87ADDCB7491844C398</key>
+		<key>2B7607C0BFCFA0AF25427B9A6E99A0DA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A5E1796096EFB120E770AE1DF9A76F09</key>
+		<key>53CD027902C55F8CE27FF763AA76E5A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A56BB6B7F3A3F84D3690A5DA7C0CAAF2</key>
 		<dict>
 			<key>primary</key>
 			<true/>

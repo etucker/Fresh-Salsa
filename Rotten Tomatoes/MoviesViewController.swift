@@ -8,6 +8,7 @@
 
 import UIKit
 import AFNetworking
+import KVNProgress
 
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -18,16 +19,20 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let url = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/d1778ca5b944ed974db0/raw/489d812c7ceeec0ac15ab77bf7c47849f2d1eb2b/gistfile1.json")!
-        let url = NSURL(string: "file:///Users/eli/dev/codepath/rotten-data.json")!
+        KVNProgress.show()
+        
+        let url = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/d1778ca5b944ed974db0/raw/489d812c7ceeec0ac15ab77bf7c47849f2d1eb2b/gistfile1.json")!
+//        let url = NSURL(string: "file:///Users/eli/dev/codepath/rotten-data.json")!
 
         let request = NSURLRequest(URL: url)
+        
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary
             if let json = json {
                 self.movies = json["movies"] as? [NSDictionary]
                 self.tableView.reloadData()
+                KVNProgress.dismiss()
             }
         }
         
@@ -72,7 +77,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -83,8 +87,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         let movieDetailsViewController = segue.destinationViewController as! MovieDetailsViewController
         movieDetailsViewController.movie = movie
-        
-        println("I'm about to seague")
     }
 
 }

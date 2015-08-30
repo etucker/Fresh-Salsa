@@ -82,7 +82,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1iz-6C-jff">
-                                        <rect key="frame" x="14" y="42" width="298" height="281"/>
+                                        <rect key="frame" x="14" y="76" width="298" height="247"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -95,6 +95,13 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LzS-ka-AL5">
+                                        <rect key="frame" x="14" y="42" width="298" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -104,6 +111,7 @@
                     <navigationItem key="navigationItem" id="2H1-3z-svv"/>
                     <connections>
                         <outlet property="posterImageView" destination="cRU-JF-IQR" id="NdU-vs-LJO"/>
+                        <outlet property="scoreLabel" destination="LzS-ka-AL5" id="VuO-Ue-94d"/>
                         <outlet property="synopsisLabel" destination="1iz-6C-jff" id="7Vr-Lz-Mlx"/>
                         <outlet property="titleLabel" destination="E9J-qb-5EL" id="bnA-VF-Rcw"/>
                     </connections>

@@ -12,6 +12,7 @@ class MovieDetailsViewController: UIViewController {
 
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
     
     var movie: NSDictionary!
@@ -21,6 +22,11 @@ class MovieDetailsViewController: UIViewController {
 
         titleLabel.text = movie["title"] as? String
         synopsisLabel.text = movie["synopsis"] as? String
+        
+        let ratings = movie["ratings"] as! NSDictionary
+        let audienceScore = ratings["audience_score"] as! Int
+        let criticsScore = ratings["critics_score"] as! Int
+        scoreLabel.text = "Score: Audience: \(audienceScore). Critics: \(criticsScore)"
         
         // Alter the URL to get the full size image
         // Original URL looks like this: "http://resizing.flixster.com/q7N6i-lodgiFIv2pn2fKcITzDFw=/o/dkpu1ddg7pbsk.cloudfront.net/movie/11/19/07/11190713_ori.jpg"

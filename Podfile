@@ -4,6 +4,7 @@ use_frameworks!
 
 target 'Rotten Tomatoes' do
   pod 'AFNetworking', "~>2.0"
+  pod 'KVNProgress'
 end
 
 target 'Rotten TomatoesTests' do
