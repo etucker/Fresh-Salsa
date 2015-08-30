@@ -10,17 +10,23 @@ import UIKit
 import AFNetworking
 import KVNProgress
 
-class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var networkErrorView: UIView!
-    
+
+    var allMovies: [NSDictionary]?
     var movies: [NSDictionary]?
+    var searchActive = false
+    
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        searchBar.delegate = self
+        
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
         tableView.insertSubview(refreshControl, atIndex: 0)
@@ -47,7 +53,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                 self.networkErrorView.hidden = true
                 let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary
                 if let json = json {
-                    self.movies = json["movies"] as? [NSDictionary]
+                    self.allMovies = json["movies"] as? [NSDictionary]
+                    self.movies = self.allMovies
                     self.tableView.reloadData()
                 }
             }
@@ -113,6 +120,38 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     // ---- end refresh stuff
+    
+    
+    // Search stuff
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        movies = allMovies!.filter({ (movie) -> Bool in
+            let tmp: NSString = movie["title"] as! NSString
+            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return range.location != NSNotFound
+        })
+        if(movies!.count == 0){
+            deactivateSearch()
+        } 
+        self.tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        deactivateSearch()
+    }
+    
+    
+    func deactivateSearch() {
+        movies = allMovies
+        self.tableView.reloadData()
+        println("calling resign first responder")
+        dispatch_async(dispatch_get_main_queue()) {
+//            self.searchBar.resignFirstResponder()
+            view.endEditing(true)
+        }
+    }
+    
+    // end search stuff
     
     // MARK: - Navigation
 

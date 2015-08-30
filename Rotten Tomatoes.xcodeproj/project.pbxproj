@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45175AD81B93BBF70039E844 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45175AD71B93BBF70039E844 /* SearchBar.swift */; };
 		458B498E1B912E13005C672B /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458B498D1B912E13005C672B /* MovieCell.swift */; };
 		45B29D321B8F8D4400ABBF15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B29D311B8F8D4400ABBF15 /* AppDelegate.swift */; };
 		45B29D371B8F8D4400ABBF15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B29D351B8F8D4400ABBF15 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		43F4BE81B066E2134C3376B7 /* Pods_Rotten_Tomatoes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rotten_Tomatoes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45175AD71B93BBF70039E844 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		458B498D1B912E13005C672B /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		45B29D2C1B8F8D4400ABBF15 /* Rotten Tomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rotten Tomatoes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B29D301B8F8D4400ABBF15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				458B498D1B912E13005C672B /* MovieCell.swift */,
+				45175AD71B93BBF70039E844 /* SearchBar.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			files = (
 				45B498991B9375E600C4629B /* MovieDetailsViewController.swift in Sources */,
 				45B29D321B8F8D4400ABBF15 /* AppDelegate.swift in Sources */,
+				45175AD81B93BBF70039E844 /* SearchBar.swift in Sources */,
 				45B29D521B8F8D9C00ABBF15 /* MoviesViewController.swift in Sources */,
 				458B498E1B912E13005C672B /* MovieCell.swift in Sources */,
 			);
